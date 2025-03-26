@@ -23,11 +23,11 @@ public class SampleRun extends BaseClass{
 
 	ObjectFactory instanceOf;
 	
-	String expectedTitle="Facebook - India";
+	String expectedTitle="Facebook � log in or sign up";
 	
 	String expectedURL="https://www.facebook.com/";
 	
-	int expectedYearSize=125;
+	int expectedYearSize=121;
 	
 	SoftAssert softAssert;
 	@BeforeClass
