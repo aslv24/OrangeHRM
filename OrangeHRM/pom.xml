@@ -55,16 +55,6 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
 					</archive>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<includes>
-						<include>com/orangeHRM/TestRunner/**</include>
-					</includes>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 </project>
