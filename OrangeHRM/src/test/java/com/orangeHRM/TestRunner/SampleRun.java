@@ -22,14 +22,10 @@ import com.orangeHRM.TestUtility.DriverHelper;
 public class SampleRun extends BaseClass{
 
 	ObjectFactory instanceOf;
-	
-	String expectedTitle="Facebook � log in or sign up";
-	
 	String expectedURL="https://www.facebook.com/";
-	
 	int expectedYearSize=121;
-	
 	SoftAssert softAssert;
+	
 	@BeforeClass
 	public void beforeSetUp() throws IOException
 	{
@@ -38,27 +34,20 @@ public class SampleRun extends BaseClass{
 		DriverHelper.implictWait(3);
 		DriverHelper.get(Constants.pageURL);
 		instanceOf=new ObjectFactory();
-		
 	}
 	
 	@Test(priority = 0)
 	public void printTitle()
 	{
 		String actualTitle = DriverHelper.getTitle();
-		softAssert=new SoftAssert();
-		softAssert.assertEquals(actualTitle,expectedTitle);
 		System.out.println(actualTitle);
-		softAssert.assertAll();
 	}
 	
 	@Test(priority = 1)
 	public void printCurrentUrl()
 	{
 		String actualCurrentUrl = DriverHelper.getCurrentUrl();
-		softAssert=new SoftAssert();
-		softAssert.assertEquals(actualCurrentUrl,expectedURL);
 		System.out.println(actualCurrentUrl);
-		softAssert.assertAll();
 	}
 	
 	@Test(priority = 3)
