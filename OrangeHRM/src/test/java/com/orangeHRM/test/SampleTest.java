@@ -1,38 +1,50 @@
 package com.orangeHRM.test;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.BrowserType;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.orangeHRM.base.BaseClass;
 import com.orangeHRM.base.Constants;
+import com.orangeHRM.pages.CreateNewAccountPage;
 import com.orangeHRM.utilities.DriverUtility;
 
-public class SampleTest extends BaseClass{
+public class SampleTest extends BaseClass {
+	
+	CreateNewAccountPage createNewAccountPage;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	@BeforeTest
+	public void setup() {
 		
 		setDriver(BrowserType.CHROME);
-		
+
 		DriverUtility.maximize();
-		
-		DriverUtility.setImplicitlywait();
-		
+
+		DriverUtility.setImplicitlywait(2);
+
 		DriverUtility.openPageUrl(Constants.PAGE_URL);
 		
-		WebElement emailField = getDriver().findElement(By.id("email"));
-		
-		WebElement passwordField = getDriver().findElement(By.id("pass"));
-		
-		WebElement loginButton = getDriver().findElement(By.name("login"));
-		
-		DriverUtility.fill(emailField, "email@mail.com");
-		
-		DriverUtility.fill(passwordField, "Email@123");
-		
-		DriverUtility.clickElement(loginButton);
-		
+		createNewAccountPage=new CreateNewAccountPage();
+
+	}
+	
+	@Test(priority = 0)
+	public void verifyTitle()
+	{
+		String pageTitle = DriverUtility.getPageTitle();
+		System.out.println(pageTitle);
+	}
+	
+	@Test(priority = 1)
+	public void verifyUrl()
+	{
+		String pageUrl = DriverUtility.getPageUrl();
+		System.out.println(pageUrl);
+	}
+
+	@Test(priority = 2)
+	public void verifyCreateAccount() {
+		createNewAccountPage.verifyAccountCreation("logeshwaran", "sivasamy", 29, 4, "1992");
 	}
 
 }

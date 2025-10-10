@@ -6,10 +6,6 @@ public class Constants {
 	final public static int MEDIUM_WAIT = Integer.parseInt(PropertyReader.getProperty("timeout.medium.wait"));
 	final public static int LONG_WAIT = Integer.parseInt(PropertyReader.getProperty("timeout.long.wait"));
 
-	final public static String CHROME ="chrome";
-	final public static String EDGE = "edge";
-	final public static String FIREFOX = "firefox";
-
 	final public static String PAGE_URL = PropertyReader.getProperty("base.app.url");
 
 	final public static String CHROME_KEY = PropertyReader.getProperty("base.driver.chrome.key");
