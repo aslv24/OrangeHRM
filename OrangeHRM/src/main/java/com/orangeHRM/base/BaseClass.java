@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 public class BaseClass {
 
@@ -20,17 +21,17 @@ public class BaseClass {
 		
 		switch(browserName.toLowerCase())
 		{
-		case Constants.CHROME:
+		case BrowserType.CHROME:
 			System.setProperty(Constants.CHROME_KEY, Constants.CHROME_VALUE);
 			driverInstance=new ChromeDriver();
 			break;
 		
-		case Constants.EDGE:
+		case BrowserType.EDGE:
 			System.setProperty(Constants.EDGE_KEY, Constants.EDGE_VALUE);
 			driverInstance=new EdgeDriver();
 			break;
 		
-		case Constants.FIREFOX:
+		case BrowserType.FIREFOX:
 			System.setProperty(Constants.FIREFOX_KEY, Constants.FIREFOX_VALUE);
 			driverInstance=new FirefoxDriver();
 			break;
