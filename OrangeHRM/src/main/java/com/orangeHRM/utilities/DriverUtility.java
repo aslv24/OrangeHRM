@@ -1,8 +1,13 @@
 package com.orangeHRM.utilities;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
 import com.orangeHRM.base.BaseClass;
@@ -88,6 +93,19 @@ public class DriverUtility extends BaseClass{
 	public void leaveFrame()
 	{
 		getDriver().switchTo().defaultContent();
+	}
+	
+	public static void captureScreenshot(String fileName)
+	{
+		File screenshotTo=new File(Constants.SCREEN_PATH+fileName+Constants.SCREEN_TYPE);
+		TakesScreenshot screen=(TakesScreenshot)getDriver();
+		File screenshotAs = screen.getScreenshotAs(OutputType.FILE);
+		try {
+			FileHandler.copy(screenshotAs, screenshotTo);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

@@ -2,13 +2,16 @@ package com.orangeHRM.test;
 
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.orangeHRM.base.BaseClass;
 import com.orangeHRM.base.Constants;
 import com.orangeHRM.pages.CreateNewAccountPage;
 import com.orangeHRM.utilities.DriverUtility;
+import com.orangeHRM.utilities.ListenersUtility;
 
+@Listeners(ListenersUtility.class)
 public class SampleTest extends BaseClass {
 	
 	CreateNewAccountPage createNewAccountPage;
@@ -45,6 +48,7 @@ public class SampleTest extends BaseClass {
 	@Test(priority = 2)
 	public void verifyCreateAccount() {
 		createNewAccountPage.verifyAccountCreation("logeshwaran", "sivasamy", 29, 4, "1992");
+		
 	}
 
 }

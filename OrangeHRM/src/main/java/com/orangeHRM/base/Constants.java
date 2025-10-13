@@ -17,4 +17,6 @@ public class Constants {
 	final public static String FIREFOX_KEY = PropertyReader.getProperty("base.driver.firefox.key");
 	final public static String FIREFOX_VALUE = PropertyReader.getProperty("base.driver.firefox.value");
 
+	final public static String SCREEN_PATH=PropertyReader.getProperty("screenshot.path");
+	final public static String SCREEN_TYPE=PropertyReader.getProperty("screenshot.type");
 }
