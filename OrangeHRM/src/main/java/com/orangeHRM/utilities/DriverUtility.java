@@ -57,6 +57,21 @@ public class DriverUtility extends BaseClass{
 		element.click();
 	}
 	
+	public static boolean elementIsDisplayed(WebElement element)
+	{
+		return element.isDisplayed();
+	}
+	
+	public static boolean elementIsEnabled(WebElement element)
+	{
+		return element.isEnabled();
+	}
+	
+	public static boolean elementIsSelected(WebElement element)
+	{
+		return element.isSelected();
+	}
+	
 	public static void dropdownByIndex(WebElement element,int index)
 	{
 		select=new Select(element);
@@ -95,7 +110,7 @@ public class DriverUtility extends BaseClass{
 		getDriver().switchTo().defaultContent();
 	}
 	
-	public static void captureScreenshot(String fileName)
+	public static String captureScreenshot(String fileName)
 	{
 		File screenshotTo=new File(Constants.SCREEN_PATH+fileName+Constants.SCREEN_TYPE);
 		TakesScreenshot screen=(TakesScreenshot)getDriver();
@@ -106,6 +121,7 @@ public class DriverUtility extends BaseClass{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return screenshotTo.getAbsolutePath();
 	}
 	
 }
